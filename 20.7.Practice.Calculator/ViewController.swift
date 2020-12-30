@@ -29,11 +29,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonPlusMinusSign: UIButton!
     @IBOutlet weak var buttonPercent: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    var argumentX: Int = 0
+    var digitsCount: Int = 0
+    
+    @IBAction func press0(_ sender: Any) {
+        argumentX = argumentX * (10^digitsCount) + 0
+        digitsCount += 1
+        displayCalc.text = "\(argumentX)"
+        
+    }
+    
+    @IBAction func press1(_ sender: Any) {
+/*        argumentX = argumentX * (10^digitsCount) + 1
+        digitsCount += 1
+        displayCalc.text = "\(argumentX)"
+         */
+        let
+        
+        argumentX = Int(displayCalc.text) * 10 + 1
+        displayCalc.text = "\(argumentX)"
+    }
 
-
+        
+        
+    
 }
 

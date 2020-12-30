@@ -20,7 +20,7 @@
                                 <rect key="frame" x="10" y="54" width="394" height="798"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLS-e6-er4">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="125"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="124.5"/>
                                         <color key="backgroundColor" red="0.88851853065639308" green="0.99336069822311401" blue="0.81398853363425328" alpha="0.82999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
@@ -147,6 +147,9 @@
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="press1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P6l-XG-BIz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC4-pX-ABQ">
                                                 <rect key="frame" x="101" y="0.0" width="91" height="125"/>
@@ -184,6 +187,9 @@
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="press0:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzE-3V-DgX"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zsw-mN-9jc">
                                                 <rect key="frame" x="202" y="0.0" width="192" height="124.5"/>
