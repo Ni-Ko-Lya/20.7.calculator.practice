@@ -8,56 +8,70 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var displayCalc: UILabel!
-    @IBOutlet weak var button0: UIButton!
-    @IBOutlet weak var buttonDot: UIButton!
-    @IBOutlet weak var buttonEqual: UIButton!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var buttonPlus: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var buttonMinus: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
-    @IBOutlet weak var button9: UIButton!
-    @IBOutlet weak var buttonMultiply: UIButton!
-    @IBOutlet weak var buttonDivide: UIButton!
-    @IBOutlet weak var buttonAC: UIButton!
-    @IBOutlet weak var buttonPlusMinusSign: UIButton!
-    @IBOutlet weak var buttonPercent: UIButton!
+ 
     
-    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var display: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    var argumentX: Int = 0
-    var digitsCount: Int = 0
     
-    @IBAction func press0(_ sender: Any) {
-        argumentX = argumentX * (10^digitsCount) + 0
-        digitsCount += 1
-        displayCalc.text = "\(argumentX)"
+    @IBAction func numberButtonPressed(_ sender: UIButton) {
         
+        guard let numberString = sender.titleLabel?.text else {return}
+        let number = Int(numberString)!
+        print (number)
+        
+        //проверяем является ли отображаемое число нулём
+        if display.text != "0"
+        {
+            if  display.text!.count < 10 // - задаём максимальное число символов на экране
+            {
+            display.text = "\(display.text ?? "0")\(String(number))"
+                
+                print ("display count is \(display.text!.count)")
+            }
+        }
+        
+        else
+            {
+            display.text = "\(String(number))"
+            
+            print ("display count is \(display.text!.count)")
+            }
+        }
+    
+    
+    
+    @IBAction func dotButtonPressed(_ sender: UIButton) {
+        //проверяем присутствует ли уже в отображаемом числе запятая
+        var doesNotContainDot: Bool = true
+        for char in display.text! {
+            if char == "." {
+                doesNotContainDot = false
+            }
+        }
+        if doesNotContainDot {
+            if  display.text!.count < 10 // - задаём максимальное число символов на экране
+            {
+            display.text = "\(display.text ?? "0")."
+            }
+        }
+        print (display.text?.count as Any)
     }
     
-    @IBAction func press1(_ sender: Any) {
-/*        argumentX = argumentX * (10^digitsCount) + 1
-        digitsCount += 1
-        displayCalc.text = "\(argumentX)"
-         */
-        let
-        
-        argumentX = Int(displayCalc.text) * 10 + 1
-        displayCalc.text = "\(argumentX)"
+    
+    
+    @IBAction func operationButtonPressed(_ sender: Any) {
     }
-
-        
-        
+    
+    @IBAction func ACButtonPressed(_ sender: UIButton) {
+        display.text = "0"
+    }
+    
+    
     
 }
 
